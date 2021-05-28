@@ -10,8 +10,9 @@ class CategoryItem extends StatelessWidget {
   void selectCategory(BuildContext ctx) {
     //* going to the next screen
     Navigator.of(ctx).pushNamed(
-        //! there are different methods instead of push
-        '/category-meals',
+        //* there are different methods instead of push
+        CategoryMealsScreen
+            .routeName, // * выбирает куда идти при помощи названия route экрана (screen'а)
         arguments: {
           'id': id,
           'title': title,
