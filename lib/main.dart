@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/screens/meal_detail_screen.dart';
+import 'package:meals_app/screens/tabs_screen.dart';
 import 'screens/category_meals_screen.dart';
 import 'screens/categories_screen.dart';
 
@@ -34,16 +35,17 @@ class MyApp extends StatelessWidget {
       // home: CategoriesScreen(), /*MyHomePage(),*/ //* defines root screen of an app
       initialRoute: '/', // default is '/'
       routes: {
-        '/': (ctx) => CategoriesScreen(), // home by default uses '/' route
+        '/': (ctx) => TabsScreen(), // home by default uses '/' route
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailsScreen.routeName: (ctx) => MealDetailsScreen(),
       },
       // onGenerateRoute: (settings) {
       //   //* если route не установлен в routes, то загрузится этот route. ! rarely used
       //   print(settings.arguments);
-        //return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
-     // },
-      onUnknownRoute: (settings) { //TODO можно сделать типо 404 ошибки если не существет route, куда человек пытался зайти
+      //return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
+      onUnknownRoute: (settings) {
+        //TODO можно сделать типо 404 ошибки если не существет route, куда человек пытался зайти
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
