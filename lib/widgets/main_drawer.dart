@@ -45,14 +45,15 @@ class MainDarawer extends StatelessWidget {
             'Meals',
             Icons.restaurant,
             () {
-              Navigator.of(context).pushNamed('/');
+              Navigator.of(context).pushReplacementNamed('/'); // Replaces existing page, so that we don't have a big stack of same pages
             },
           ),
           buildListTile(
             'Filters',
             Icons.settings,
             () {
-              Navigator.of(context).pushNamed(FiltersScreen.routeName);
+              Navigator.of(context)
+                  .pushReplacementNamed(FiltersScreen.routeName);
             },
           ),
         ],
