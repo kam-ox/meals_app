@@ -8,10 +8,9 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       padding: const EdgeInsets.all(25),
-      children: DUMMY_CATEGORIES // ! turning list into widgets
+      children: DUMMY_CATEGORIES
           .map(
             (catData) => CategoryItem(
-              // * returns CategoryItem widget passing title and color
               catData.id,
               catData.title,
               catData.color,
